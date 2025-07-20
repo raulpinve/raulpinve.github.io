@@ -1,0 +1,43 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        date: "Actualmente...",
+        title: "Desarrollo de Kardex Tool",
+        description: "Diseño y programación de una aplicación web para la gestión de inventarios hospitalarios. Implementé funcionalidades para el control de entradas y salidas, trazabilidad por ubicación y tipo de producto, mejorando la eficiencia logística.",
+    },
+    {
+        date: "2024 – Actualmente",
+        title: "Diseño e implementación de Auditoría 3100 Tool",
+        description: "Construcción de una herramienta web para auditorías técnicas en salud según la Resolución 3100. Desarrollé módulos para verificación normativa, registro de hallazgos y generación automática de reportes.",
+    },
+    {
+        date: "2024",
+        title: "Creación de Indicadores Tool",
+        description:"Diseño e implementación de una aplicación para el seguimiento de indicadores de gestión institucional. Permite registrar metas, responsables y resultados con visualizaciones que apoyan la toma de decisiones.",
+    },
+    {
+        date: "2017 – 2023",
+        title: "Diseño y desarrollo de aplicaciones web",
+        description: "Experiencia general en proyectos de desarrollo web, desde el análisis funcional hasta la implementación con tecnologías modernas como React, Next.js y Tailwind. Enfocado en soluciones para el sector salud.",
+    },
+    {
+        date: "2017 – 2020",
+        title: "Desarrollo de Apply",
+        description: "Participación en el desarrollo de una herramienta para la gestión documental de sistemas integrados (calidad, seguridad y medio ambiente). Implementé control de versiones, flujos de aprobación y trazabilidad documental.",
+    },
+];
+
+---
+
+<ol class="relative border-s border-gray-200 ml-2">   
+    {
+        EXPERIENCE.map(experience => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }               
+</ol>
+

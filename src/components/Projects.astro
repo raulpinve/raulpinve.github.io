@@ -1,0 +1,111 @@
+---
+import NextJS from "../icons/NextJS.astro"
+import Tailwind from "../icons/Tailwind.astro"
+import React from "../icons/React.astro"
+import Node from "../icons/Node.astro"
+import Sql from "../icons/Sql.astro"
+import Php from "../icons/Php.astro"
+import HTML from "../icons/Html.astro"
+import Css from "../icons/Css.astro"
+
+const TAGS = {
+    NEXT: {
+        name: "Next.js",
+        class: "bg-black text-white",
+        icon: NextJS,
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white",
+        icon: Tailwind,
+    },
+    REACT: {
+        name: "React.js",
+        class: "bg-[#1e2a33] text-[#61dafb]",
+        icon: React,
+    },
+    NODE: {
+        name: "Node.js",
+        class: "bg-[#026e00] text-white",
+        icon: Node,
+    },
+    SQL: {
+        name: "SQL",
+        class: "bg-[#00758F] text-white",
+        icon: Sql,
+    }, 
+    PHP: {
+        name: "PHP",
+        class: "bg-[#4F5B93] text-white",
+        icon: Php,
+    },
+    HTML: {
+        name: "HTML",
+        class: "bg-[#e44d26] text-white",
+        icon: HTML,
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-[#264de4] text-white",
+        icon: Css,
+    },
+};
+
+const PROJECTS = [
+    {
+        title: "Kardex",
+        description: "Aplicación web para la gestión detallada del inventario de medicamentos, insumos y dispositivos médicos. Permite controlar entradas, salidas y trazabilidad por fecha, ubicación y tipo de producto, optimizando la logística y el control hospitalario.",
+        link: "#",
+        GitHub: "#",
+        image: "/projects/kardex.jpg",
+        tags: [TAGS.NODE, TAGS.SQL, TAGS.REACT, TAGS.TAILWIND]
+    },
+    {
+        title: "3100",
+        description: "Herramienta desarrollada para facilitar auditorías técnicas en entidades de salud, basada en los lineamientos de la Resolución 3100 del Ministerio de Salud. Incluye funciones para verificación normativa, registro de hallazgos y generación de reportes.",
+        link: "#",
+        GitHub: "#",
+        image: "/projects/3100.jpg",
+        tags: [TAGS.NODE, TAGS.SQL, TAGS.REACT, TAGS.TAILWIND]
+    },
+    {
+        title: "Indicadores",
+        description: "Aplicación orientada a la construcción, seguimiento y visualización de indicadores de gestión institucional. Permite registrar metas, responsables y resultados, facilitando el análisis y la toma de decisiones estratégicas.",
+        link: "#",
+        GitHub: "#",
+        image: "/projects/indicadores.jpg",
+        tags: [TAGS.NODE, TAGS.SQL, TAGS.REACT, TAGS.TAILWIND]
+    },
+    {
+        title: "Apply",
+        description: "Aplicación diseñada para la gestión documental de sistemas integrados de gestión (SIG), abarcando calidad, seguridad y medio ambiente. Incluye control de versiones, flujos de aprobación y trazabilidad completa de la documentación.",
+        link: "#",
+        GitHub: "#",
+        image: "/projects/apply.jpg",
+        tags: [TAGS.PHP, TAGS.SQL, TAGS.HTML, TAGS.CSS]
+    },
+]
+---
+{
+    PROJECTS.map(({image, title, description, tags}) => (
+        <article class="py-5 mb-4">
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-6">
+                {tags.map(tag => (
+                    <li>
+                        <span class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-3 text-white`}>
+                            <tag.icon class="size-5"/>
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img 
+                src={image} 
+                alt={`Captura de pantalla del proyecto ${image}`}
+                class="rounded shadow-2xl shadow-white/10"
+            >
+        </article>
+    ))
+}
